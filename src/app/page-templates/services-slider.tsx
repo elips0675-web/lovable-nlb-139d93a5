@@ -4,7 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { catalogServices } from '../data/printing-services';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 const ServicesSlider: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
