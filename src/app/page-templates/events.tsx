@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useState } from 'react';
 import {
   Dialog,
@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './ui/dialog';
+} from '../components/ui/dialog';
 
 const events = [
   {
