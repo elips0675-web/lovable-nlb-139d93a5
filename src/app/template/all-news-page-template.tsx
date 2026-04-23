@@ -74,14 +74,14 @@ const newsItems = [
     id: 9,
     title: 'Книжный клуб: обсуждаем классику',
     date: '22 мая 2024',
-    description: 'В этом месяце обсуждаем \'''Мастера и Маргариту\'''. Присоединяйтесь к дискуссии!',
+    description: 'В этом месяце обсуждаем «Мастера и Маргариту». Присоединяйтесь к дискуссии!',
     image: 'https://images.unsplash.com/photo-1550399105-c4db5fb85c18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY2x1YnxlbnwxfHx8fDE3NzUyNjQ2MDl8MA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
     id: 10,
     title: 'Выставка детских рисунков',
     date: '20 мая 2024',
-    description: 'Экспозиция работ юных художников на тему \'''Мой любимый сказочный герой\'''.',
+    description: 'Экспозиция работ юных художников на тему «Мой любимый сказочный герой».',
     image: 'https://images.unsplash.com/photo-1501418611760-7ac53597a149?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGRyYXdpbmdzfGVufDF8fHx8MTc3NTI2NDY0Nnww&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
