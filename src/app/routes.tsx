@@ -5,6 +5,7 @@ import ServiceDetailPage from "./page-templates/service-detail";
 import PrintingServiceDetail from "./page-templates/printing-service-detail";
 import PrintingServicesCatalog from "./page-templates/printing-services-catalog";
 import AllEventsPage from "./page-templates/all-events";
+import EventDetailPage from "./page-templates/event-detail";
 import AllNewsPage from "./page-templates/all-news-page";
 import BooksCatalog from "./page-templates/books-catalog";
 import RegistrationPage from "./page-templates/registration";
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
   {
     path: "/all-events",
     Component: AllEventsPage,
+  },
+  {
+    path: "/all-events/:id",
+    Component: EventDetailPage,
   },
   {
     path: "/all-news",
