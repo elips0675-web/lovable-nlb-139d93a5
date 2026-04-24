@@ -1,10 +1,37 @@
-export const newsItems = [
+export interface NewsItem {
+  id: number;
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  image: string;
+  category: string;
+  color: string;
+  author?: string;
+  readTime?: string;
+  fullContent?: string[];
+  tags?: string[];
+}
+
+export const newsItems: NewsItem[] = [
   {
     id: 15,
+    slug: 'ai-assistant-library',
     title: 'Новая эра библиотеки: внедрение ИИ-ассистента',
     date: '18 июня 2024',
     description: 'Мы рады сообщить, что в нашей библиотеке появился виртуальный ИИ-ассистент, готовый помочь вам с поиском книг, ответами на вопросы и навигацией по нашим услугам.',
     image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnQlMjBkaWdpdGFsfGVufDF8fHx8MTc3NTI2NDczMnww&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'Технологии',
+    color: 'from-green-500 to-emerald-500',
+    author: 'Пресс-служба НББ',
+    readTime: '4 мин',
+    fullContent: [
+      'С сегодняшнего дня в нашей библиотеке доступен виртуальный ИИ-ассистент — интеллектуальный помощник, готовый ответить на вопросы читателей 24/7.',
+      'Ассистент умеет искать книги по описанию, рекомендовать литературу по интересам, помогать с навигацией по зданию и подсказывать расписание мероприятий.',
+      'Технология построена на современных языковых моделях и постоянно обучается на базе нашего каталога. Это значит, что качество рекомендаций будет улучшаться с каждым обращением.',
+      'Чтобы воспользоваться ассистентом, достаточно нажать кнопку чата в правом нижнем углу сайта или подойти к интерактивному киоску в холле.',
+    ],
+    tags: ['ИИ', 'инновации', 'сервис'],
   },
   {
     id: 1,
