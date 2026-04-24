@@ -1,50 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-
-const newsItems = [
-  {
-    id: 1,
-    title: 'Летний читальный зал открыт!',
-    date: '15 июня 2024',
-    description: 'Наслаждайтесь книгами на свежем воздухе в нашем уютном летнем дворике.',
-    image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaWJyYXJ5JTIwc3VtbWVyfGVufDF8fHx8MTc3NTE2NjYyNnww&ixlib=rb-4.1.0&q=80&w=1080',
-  },
-  {
-    id: 2,
-    title: 'Новые поступления: научная фантастика',
-    date: '12 июня 2024',
-    description: 'Более 50 новых книг в жанре научной фантастики уже на полках.',
-    image: 'https://images.unsplash.com/photo-1583463699313-290071c67f56?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    id: 3,
-    title: 'Онлайн-встреча с писателем-фантастом',
-    date: '10 июня 2024',
-    description: 'Обсуждение новой книги и творческих планов с известным автором.',
-    image: 'https://images.unsplash.com/photo-1516131206008-dd2c85b3b1dd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    id: 4,
-    title: 'Выставка «История книгопечатания»',
-    date: '8 июня 2024',
-    description: 'Узнайте о развитии технологий печати от Гутенберга до наших дней.',
-    image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGQlMjBib29rcyUyMGxpYnJhcnl8ZW58MXx8fHwxNjc0MDIwMzY4fDA&ixlib=rb-1.2.1&q=80&w=1080',
-  },
-  {
-    id: 5,
-    title: 'Клуб любителей классики: обсуждаем «Войну и мир»',
-    date: '5 июня 2024',
-    description: 'Присоединяйтесь к нашему ежемесячному клубу для глубокого погружения в шедевры мировой литературы.',
-    image: 'https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    id: 6,
-    title: 'Детский час: читаем сказки',
-    date: '2 июня 2024',
-    description: 'Каждое воскресенье мы читаем вслух лучшие сказки для самых маленьких слушателей.',
-    image: 'https://images.unsplash.com/photo-1501724398958-b1c1c1a96c23?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-];
+import { newsItems } from '../data/news';
 
 export function News() {
   return (
@@ -63,14 +19,18 @@ export function News() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
-              <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <p className="text-sm text-gray-500 mb-2">{item.date}</p>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-700">{item.description}</p>
-              </div>
+              <Link to={`/news/${item.slug}`} className="block">
+                <div className="relative overflow-hidden">
+                  <img src={item.image} alt={item.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-6">
+                  <p className="text-sm text-gray-500 mb-2">{item.date}</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">{item.title}</h3>
+                  <p className="text-gray-700 text-sm line-clamp-2">{item.description}</p>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
