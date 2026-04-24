@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+import { Clock, MapPin, Users, Search, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import {
   Pagination,
@@ -13,8 +14,7 @@ import {
 } from './ui/pagination';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-const events = [
+import { events, eventCategories, type EventItem } from '../data/events';
   {
     id: 'author-meeting',
     date: '15 Апр',
