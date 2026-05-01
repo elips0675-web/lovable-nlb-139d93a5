@@ -432,6 +432,27 @@ export default function PrintingServiceDetail() {
                 </Slider>
             </motion.div>
           </div>
+          {!service.calculator && service.priceList && (
+            <div className="lg:col-span-1">
+              <div className="bg-gray-50 rounded-2xl p-8 sticky top-28 shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Прайс-лист</h3>
+                <ul className="divide-y divide-gray-200 mb-6">
+                  {service.priceList.map((p: { name: string; price: string }, i: number) => (
+                    <li key={i} className="flex items-center justify-between py-3">
+                      <span className="text-gray-700">{p.name}</span>
+                      <span className={`font-semibold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>{p.price}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  onClick={() => navigate(`/printing-services/order-confirmation?serviceTitle=${encodeURIComponent(service.title)}`)}
+                  className={`w-full py-3 bg-gradient-to-r ${service.color} text-white rounded-xl hover:shadow-xl transition-all font-semibold flex items-center justify-center gap-2 group`}>
+                  Оставить заявку
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          )}
           {service.calculator && (
             <div className="lg:col-span-1">
               <div className="bg-gray-50 rounded-2xl p-8 sticky top-28 shadow-lg">
