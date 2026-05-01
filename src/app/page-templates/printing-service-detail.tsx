@@ -357,8 +357,9 @@ export default function PrintingServiceDetail() {
 
     for (const [key, value] of Object.entries(options)) {
       const pricingConfig = service.calculator.pricing[key];
-      if (pricingConfig && pricingConfig[value]) {
-        multiplier *= pricingConfig[value];
+      const v = value as string;
+      if (pricingConfig && pricingConfig[v]) {
+        multiplier *= pricingConfig[v];
       }
     }
     
