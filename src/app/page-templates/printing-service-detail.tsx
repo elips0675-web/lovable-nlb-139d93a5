@@ -6,6 +6,7 @@ import { Header } from '../components/header';
 import { Footer } from '../components/footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Printer, FileText, CreditCard, BookOpen, Package, ArrowRight, Check, Plus, Minus, CupSoda, Shirt, GalleryHorizontal, ChevronLeft, ChevronRight, Upload, ScanLine } from 'lucide-react';
+import { catalogServices } from '../data/printing-services';
 
 const printingServiceDetails = {
   'document-printing': {
@@ -316,7 +317,24 @@ const sliderSettings = {
 export default function PrintingServiceDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const service = printingServiceDetails[id];
+  let service: any = printingServiceDetails[id as keyof typeof printingServiceDetails];
+  if (!service) {
+    const fallback = catalogServices.find(s => s.id === id);
+    if (fallback) {
+      service = {
+        id: fallback.id,
+        icon: fallback.icon,
+        title: fallback.title,
+        subtitle: fallback.description,
+        description: fallback.description,
+        fullDescription: `${fallback.description}\n\nМы изготавливаем «${fallback.title.toLowerCase()}» на современном оборудовании в кратчайшие сроки. Ниже — ориентировочный прайс. Точную стоимость уточняйте у менеджера, она зависит от тиража, материала и сложности дизайна.`,
+        color: fallback.color,
+        bgColor: 'bg-gray-50',
+        images: [fallback.image, fallback.image],
+        priceList: fallback.prices,
+      };
+    }
+  }
   const fileInputRef = useRef(null);
 
   const [quantity, setQuantity] = useState(10);
