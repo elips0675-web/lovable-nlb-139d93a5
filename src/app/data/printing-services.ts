@@ -1,4 +1,4 @@
-import { Printer, ScanLine, BookOpen, CreditCard, FileText, Package, Shirt, GalleryHorizontal, CupSoda } from 'lucide-react';
+import { Printer, ScanLine, BookOpen, CreditCard, FileText, Package, Shirt, GalleryHorizontal, CupSoda, Calendar, Sticker, Image as ImageIcon, Map, Mail, Notebook, ShoppingBag, IdCard, Stamp, Flag, Folder, Tag, Presentation, KeyRound, Magnet, BadgeCheck, PenTool, HardDrive, Puzzle } from 'lucide-react';
 import scanningImg from '@/assets/printing/scanning.jpg';
 import canvasImg from '@/assets/printing/canvas.jpg';
 import mugImg from '@/assets/printing/mug.jpg';
@@ -131,3 +131,309 @@ export const catalogServices = [
       color: 'from-sky-500 to-fuchsia-500',
   }
 ];
+
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080`;
+
+// === Расширенный каталог: стандартный набор, полиграфия для бизнеса, сувенирная продукция ===
+catalogServices.push(
+  // --- Стандартный набор ---
+  {
+    id: 'calendars',
+    icon: Calendar,
+    title: 'Календари',
+    description: 'Карманные, настольные и настенные календари с вашим дизайном.',
+    image: unsplash('1611532736597-de2d4265fba3'),
+    prices: [
+      { name: 'Карманный (10 шт.)', price: '300₽' },
+      { name: 'Настольный «домик»', price: '450₽' },
+      { name: 'Настенный перекидной', price: '700₽' },
+      { name: 'Квартальный', price: '900₽' },
+    ],
+    color: 'from-rose-500 to-pink-500',
+  },
+  {
+    id: 'stickers',
+    icon: Sticker,
+    title: 'Наклейки и стикеры',
+    description: 'Виниловые и бумажные наклейки любой формы и тиража.',
+    image: unsplash('1607082348824-0a96f2a4b9da'),
+    prices: [
+      { name: 'Лист А4 (нарезка)', price: '150₽' },
+      { name: 'Круглые d=5см (50 шт.)', price: '350₽' },
+      { name: 'Контурная резка', price: '+100₽' },
+      { name: 'Прозрачная плёнка', price: '+200₽' },
+    ],
+    color: 'from-yellow-500 to-orange-500',
+  },
+  {
+    id: 'photo-printing',
+    icon: ImageIcon,
+    title: 'Фотопечать',
+    description: 'Печать фотографий 10×15, 15×20 и больше на фотобумаге.',
+    image: unsplash('1452860606245-08befc0ff44b'),
+    prices: [
+      { name: '10×15 (1 шт.)', price: '15₽' },
+      { name: '15×20 (1 шт.)', price: '50₽' },
+      { name: '20×30 (1 шт.)', price: '120₽' },
+      { name: 'Фото на документы (4 шт.)', price: '200₽' },
+    ],
+    color: 'from-cyan-500 to-blue-500',
+  },
+  {
+    id: 'blueprints',
+    icon: Map,
+    title: 'Чертежи и плакаты',
+    description: 'Печать чертежей и плакатов в формате А1, А0 для учёбы и работы.',
+    image: unsplash('1517242810446-cc8951b2be40'),
+    prices: [
+      { name: 'А2 ч/б', price: '100₽' },
+      { name: 'А1 ч/б', price: '180₽' },
+      { name: 'А1 цвет', price: '350₽' },
+      { name: 'А0 цвет', price: '600₽' },
+    ],
+    color: 'from-slate-500 to-gray-600',
+  },
+  {
+    id: 'postcards',
+    icon: Mail,
+    title: 'Открытки и приглашения',
+    description: 'Авторские открытки и приглашения для любого события.',
+    image: unsplash('1576941089067-2de3c901e126'),
+    prices: [
+      { name: 'Одинарная (10 шт.)', price: '300₽' },
+      { name: 'Складная (10 шт.)', price: '500₽' },
+      { name: 'С конвертом', price: '+50₽/шт' },
+      { name: 'Тиснение фольгой', price: '+150₽/шт' },
+    ],
+    color: 'from-pink-500 to-rose-500',
+  },
+  {
+    id: 'notebooks',
+    icon: Notebook,
+    title: 'Блокноты и ежедневники',
+    description: 'Блокноты с фирменной обложкой, на пружине или термоклее.',
+    image: unsplash('1531346878377-a5be20888e57'),
+    prices: [
+      { name: 'А5, 60 листов', price: '450₽' },
+      { name: 'А4, 100 листов', price: '750₽' },
+      { name: 'Ежедневник недатир.', price: '950₽' },
+      { name: 'Тиснение лого', price: '+200₽' },
+    ],
+    color: 'from-emerald-500 to-green-600',
+  },
+  {
+    id: 'paper-bags',
+    icon: ShoppingBag,
+    title: 'Печать на пакетах',
+    description: 'Бумажные крафт-пакеты с вашим логотипом и дизайном.',
+    image: unsplash('1556761175-5973dc0f32e7'),
+    prices: [
+      { name: 'Малый (50 шт.)', price: '1500₽' },
+      { name: 'Средний (50 шт.)', price: '2200₽' },
+      { name: 'Большой (50 шт.)', price: '3000₽' },
+      { name: 'Цветная печать', price: '+500₽' },
+    ],
+    color: 'from-amber-600 to-yellow-700',
+  },
+  {
+    id: 'badges',
+    icon: IdCard,
+    title: 'Бейджи',
+    description: 'Бейджи для сотрудников и мероприятий: пластик, картон, со шнурком.',
+    image: unsplash('1543002588-bfa74002ed7e'),
+    prices: [
+      { name: 'Картонный (10 шт.)', price: '200₽' },
+      { name: 'Пластиковый (10 шт.)', price: '600₽' },
+      { name: 'С клипсой', price: '+30₽/шт' },
+      { name: 'На шнурке', price: '+50₽/шт' },
+    ],
+    color: 'from-violet-500 to-indigo-500',
+  },
+  {
+    id: 'stamps',
+    icon: Stamp,
+    title: 'Печати и штампы',
+    description: 'Изготовление печатей и штампов любой сложности за 1 час.',
+    image: unsplash('1542838132-92c53300491e'),
+    prices: [
+      { name: 'Штамп прямоугольный', price: '700₽' },
+      { name: 'Печать круглая', price: '900₽' },
+      { name: 'Автоматическая оснастка', price: '+400₽' },
+      { name: 'Срочное изготовление', price: '+500₽' },
+    ],
+    color: 'from-red-600 to-rose-700',
+  },
+  {
+    id: 'flags',
+    icon: Flag,
+    title: 'Флажки и вымпелы',
+    description: 'Настольные флажки, вымпелы и текстильные флаги для мероприятий.',
+    image: unsplash('1518791841217-8f162f1e1131'),
+    prices: [
+      { name: 'Настольный флажок', price: '350₽' },
+      { name: 'Вымпел текстильный', price: '550₽' },
+      { name: 'Флаг 90×135 см', price: '1500₽' },
+      { name: 'Двусторонний', price: '+50%' },
+    ],
+    color: 'from-blue-600 to-sky-700',
+  },
+
+  // --- Полиграфия для бизнеса ---
+  {
+    id: 'letterheads',
+    icon: FileText,
+    title: 'Бланки и фирменные формы',
+    description: 'Фирменные бланки, накладные, акты с вашим лого.',
+    image: unsplash('1606166187734-a4cb74079037'),
+    prices: [
+      { name: 'А4 ч/б (100 шт.)', price: '500₽' },
+      { name: 'А4 цвет (100 шт.)', price: '1200₽' },
+      { name: 'Самокопирующиеся', price: '+300₽' },
+      { name: 'Нумерация', price: '+100₽' },
+    ],
+    color: 'from-slate-600 to-zinc-700',
+  },
+  {
+    id: 'envelopes',
+    icon: Mail,
+    title: 'Конверты с логотипом',
+    description: 'Корпоративные конверты С6, Е65, С5 с печатью лого.',
+    image: unsplash('1577962917302-cd874c4e31d2'),
+    prices: [
+      { name: 'Е65 (100 шт.)', price: '900₽' },
+      { name: 'С5 (100 шт.)', price: '1100₽' },
+      { name: 'С4 (100 шт.)', price: '1500₽' },
+      { name: 'Цветная печать', price: '+400₽' },
+    ],
+    color: 'from-teal-600 to-cyan-700',
+  },
+  {
+    id: 'folders',
+    icon: Folder,
+    title: 'Папки фирменные',
+    description: 'Презентационные папки для документов с вашим брендом.',
+    image: unsplash('1556228720-195a672e8a03'),
+    prices: [
+      { name: 'Папка А4 (10 шт.)', price: '1200₽' },
+      { name: 'С карманом', price: '+200₽' },
+      { name: 'Ламинация', price: '+300₽' },
+      { name: 'Тиснение фольгой', price: '+500₽' },
+    ],
+    color: 'from-indigo-600 to-blue-700',
+  },
+  {
+    id: 'price-tags',
+    icon: Tag,
+    title: 'Ценники и ярлыки',
+    description: 'Ценники для магазинов, ярлыки для одежды и продукции.',
+    image: unsplash('1542435503-956c469947f6'),
+    prices: [
+      { name: 'Бумажные (100 шт.)', price: '300₽' },
+      { name: 'Картон с люверсом', price: '600₽' },
+      { name: 'Самоклеящиеся', price: '450₽' },
+      { name: 'Двусторонние', price: '+150₽' },
+    ],
+    color: 'from-orange-500 to-amber-600',
+  },
+  {
+    id: 'presentations',
+    icon: Presentation,
+    title: 'Презентации',
+    description: 'Печать и брошюровка презентаций для встреч и тендеров.',
+    image: unsplash('1560472354-b33ff0c44a43'),
+    prices: [
+      { name: 'А4 цвет (10 стр.)', price: '250₽' },
+      { name: 'А4 цвет (20 стр.)', price: '500₽' },
+      { name: 'На пружине', price: '+100₽' },
+      { name: 'Твёрдая обложка', price: '+400₽' },
+    ],
+    color: 'from-purple-600 to-fuchsia-600',
+  },
+
+  // --- Сувенирная продукция ---
+  {
+    id: 'keychains',
+    icon: KeyRound,
+    title: 'Брелоки',
+    description: 'Акриловые и металлические брелоки с вашим дизайном.',
+    image: unsplash('1571867424488-4565932edb41'),
+    prices: [
+      { name: 'Акриловый', price: '250₽' },
+      { name: 'Металлический', price: '450₽' },
+      { name: 'Двусторонний', price: '+100₽' },
+      { name: 'Партия от 10 шт.', price: '−15%' },
+    ],
+    color: 'from-lime-500 to-emerald-600',
+  },
+  {
+    id: 'magnets',
+    icon: Magnet,
+    title: 'Магниты',
+    description: 'Сувенирные и виниловые магниты на холодильник.',
+    image: unsplash('1607344645866-009c320b63e0'),
+    prices: [
+      { name: 'Виниловый 7×10', price: '200₽' },
+      { name: 'Акриловый объёмный', price: '350₽' },
+      { name: 'Открытка-магнит', price: '300₽' },
+      { name: 'Партия 50 шт.', price: '−20%' },
+    ],
+    color: 'from-fuchsia-500 to-pink-600',
+  },
+  {
+    id: 'pins',
+    icon: BadgeCheck,
+    title: 'Значки и пины',
+    description: 'Значки на закатке и металлические пины с эмалью.',
+    image: unsplash('1614680376739-414d95ff43df'),
+    prices: [
+      { name: 'Закатной d=37мм', price: '120₽' },
+      { name: 'Закатной d=56мм', price: '180₽' },
+      { name: 'Металл с эмалью', price: '450₽' },
+      { name: 'Партия 100 шт.', price: '−25%' },
+    ],
+    color: 'from-red-500 to-orange-600',
+  },
+  {
+    id: 'pens',
+    icon: PenTool,
+    title: 'Ручки с лого',
+    description: 'Брендированные шариковые ручки для офиса и подарков.',
+    image: unsplash('1535930891776-0c2dfb7fda1a'),
+    prices: [
+      { name: 'Пластик (50 шт.)', price: '1500₽' },
+      { name: 'Металл (50 шт.)', price: '4500₽' },
+      { name: 'Гравировка', price: '+30₽/шт' },
+      { name: 'Подарочная коробка', price: '+150₽' },
+    ],
+    color: 'from-blue-500 to-indigo-600',
+  },
+  {
+    id: 'usb-drives',
+    icon: HardDrive,
+    title: 'Флешки с лого',
+    description: 'USB-флешки с печатью или гравировкой логотипа.',
+    image: unsplash('1581090464777-f3220bbe1b8b'),
+    prices: [
+      { name: '8 GB пластик', price: '550₽' },
+      { name: '16 GB металл', price: '850₽' },
+      { name: 'УФ-печать лого', price: '+150₽' },
+      { name: 'Гравировка', price: '+200₽' },
+    ],
+    color: 'from-cyan-600 to-teal-700',
+  },
+  {
+    id: 'puzzles',
+    icon: Puzzle,
+    title: 'Пазлы с фото',
+    description: 'Сборные пазлы из вашей фотографии, отличный подарок.',
+    image: unsplash('1511467687858-23d96c32e4ae'),
+    prices: [
+      { name: '120 элементов А4', price: '650₽' },
+      { name: '252 элемента А3', price: '950₽' },
+      { name: 'Подарочная коробка', price: '+200₽' },
+      { name: 'Срочно (1 день)', price: '+300₽' },
+    ],
+    color: 'from-violet-600 to-purple-700',
+  },
+);
