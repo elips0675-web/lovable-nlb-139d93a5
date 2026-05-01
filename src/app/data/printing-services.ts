@@ -1,4 +1,7 @@
 import { Printer, ScanLine, BookOpen, CreditCard, FileText, Package, Shirt, GalleryHorizontal, CupSoda } from 'lucide-react';
+import scanningImg from '@/assets/printing/scanning.jpg';
+import canvasImg from '@/assets/printing/canvas.jpg';
+import mugImg from '@/assets/printing/mug.jpg';
 
 export const catalogServices = [
   {
@@ -20,7 +23,7 @@ export const catalogServices = [
       icon: ScanLine,
       title: 'Сканирование',
       description: 'Профессиональное сканирование документов и фотографий.',
-      image: 'https://images.unsplash.com/photo-1581094794329-c8592a1881d8?ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2FubmVyJTIwZG9jdW1lbnR8ZW58MHx8fHwxNzE0NTg0NTI5fDA&ixlib-rb-4.0.3&w=1080',
+      image: scanningImg,
       prices: [
         { name: 'Сканирование А4', price: '10₽' },
         { name: 'Сканирование А3', price: '20₽' },
@@ -90,7 +93,7 @@ export const catalogServices = [
       icon: GalleryHorizontal,
       title: 'Печать на холсте',
       description: 'Фотографии и репродукции на натуральном холсте.',
-      image: 'https://images.unsplash.com/photo-154184859-5989b3889895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3N0ZXIlMjBwcmludGluZyUyMHdhbGx8ZW58MXx8fHwxNzc1MzAzMTExfDA&ixlib-rb-4.1.0&q=80&w=1080',
+      image: canvasImg,
       prices: [
         { name: '30x40 см', price: '900₽' },
         { name: '40x60 см', price: '1500₽' },
@@ -104,7 +107,7 @@ export const catalogServices = [
       icon: CupSoda,
       title: 'Печать на кружках',
       description: 'Кружки с вашим фото, логотипом или надписью.',
-      image: 'https://images.unsplash.com/photo-1516788419857-a41a4c921102?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBtdWclMjBwcmludGluZ3xlbnwxfHx8fDE3NzUzMDMwMTF8MA&ixlib-rb-4.1.0&q=80&w=1080',
+      image: mugImg,
       prices: [
         { name: 'Белая кружка', price: '350₽' },
         { name: 'Кружка-хамелеон', price: '550₽' },
