@@ -119,4 +119,6 @@ export const router = createBrowserRouter([
     path: "/minsk-map",
     Component: MinskMapPage,
   },
+    ],
+  },
 ]);
