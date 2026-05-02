@@ -403,30 +403,30 @@ export default function PrintingServiceDetail() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section className={`pt-32 pb-16 relative overflow-hidden bg-gradient-to-br ${service.color} text-white`}>
+      <section className={`pt-24 sm:pt-32 pb-12 sm:pb-16 relative overflow-hidden bg-gradient-to-br ${service.color} text-white`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-                <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
-                    <Icon className="w-12 h-12"/>
+                <div className="w-14 h-14 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                    <Icon className="w-8 h-8 sm:w-12 sm:h-12"/>
                 </div>
-                <h1 className="text-5xl sm:text-6xl font-bold mb-4">{service.title}</h1>
-                <p className="text-xl sm:text-2xl opacity-90">{service.subtitle}</p>
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 break-words">{service.title}</h1>
+                <p className="text-base sm:text-xl lg:text-2xl opacity-90">{service.subtitle}</p>
             </motion.div>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-16">
+      <section className="py-10 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-8 lg:gap-16">
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Подробное описание</h2>
-            <div className="prose prose-lg text-gray-600 max-w-none mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Подробное описание</h2>
+            <div className="prose prose-base sm:prose-lg text-gray-600 max-w-none mb-8 sm:mb-12">
               {service.fullDescription.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
             </div>
              <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.2 }} className="relative shadow-2xl rounded-2xl">
                 <Slider {...sliderSettings}>
                     {service.images.map((img, i) => (
                         <div key={i}>
-                            <ImageWithFallback src={img} alt={`${service.title} image ${i+1}`} className="w-full h-80 object-cover rounded-2xl" />
+                            <ImageWithFallback src={img} alt={`${service.title} image ${i+1}`} className="w-full h-56 sm:h-80 object-cover rounded-2xl" />
                         </div>
                     ))}
                 </Slider>
@@ -434,13 +434,13 @@ export default function PrintingServiceDetail() {
           </div>
           {!service.calculator && service.priceList && (
             <div className="lg:col-span-1">
-              <div className="bg-gray-50 rounded-2xl p-8 sticky top-28 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Прайс-лист</h3>
+              <div className="bg-gray-50 rounded-2xl p-5 sm:p-8 lg:sticky lg:top-28 shadow-lg">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Прайс-лист</h3>
                 <ul className="divide-y divide-gray-200 mb-6">
                   {service.priceList.map((p: { name: string; price: string }, i: number) => (
-                    <li key={i} className="flex items-center justify-between py-3">
-                      <span className="text-gray-700">{p.name}</span>
-                      <span className={`font-semibold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>{p.price}</span>
+                    <li key={i} className="flex items-center justify-between gap-3 py-3">
+                      <span className="text-gray-700 text-sm sm:text-base">{p.name}</span>
+                      <span className={`font-semibold whitespace-nowrap bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>{p.price}</span>
                     </li>
                   ))}
                 </ul>
@@ -455,8 +455,8 @@ export default function PrintingServiceDetail() {
           )}
           {service.calculator && (
             <div className="lg:col-span-1">
-              <div className="bg-gray-50 rounded-2xl p-8 sticky top-28 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Калькулятор стоимости</h3>
+              <div className="bg-gray-50 rounded-2xl p-5 sm:p-8 lg:sticky lg:top-28 shadow-lg">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Калькулятор стоимости</h3>
                 
                 {/* Options */}
                 <div className="space-y-4 mb-6">
@@ -466,14 +466,14 @@ export default function PrintingServiceDetail() {
                       {opt.type === 'radio' && (
                         <div className="flex flex-wrap gap-2">
                           {opt.values.map(val => (
-                            <button key={val} onClick={() => handleOptionChange(opt.id, val)} className={`px-4 py-3 rounded-lg text-sm transition ${options[opt.id] === val ? `bg-gradient-to-r ${service.color} text-white shadow` : 'bg-white border border-gray-300 hover:bg-gray-100'}`}>
+                            <button key={val} onClick={() => handleOptionChange(opt.id, val)} className={`px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm transition ${options[opt.id] === val ? `bg-gradient-to-r ${service.color} text-white shadow` : 'bg-white border border-gray-300 hover:bg-gray-100'}`}>
                               {val}
                             </button>
                           ))}
                         </div>
                       )}
                       {opt.type === 'select' && (
-                        <select onChange={(e) => handleOptionChange(opt.id, e.target.value)} value={options[opt.id]} className="w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-3">
+                        <select onChange={(e) => handleOptionChange(opt.id, e.target.value)} value={options[opt.id]} className="w-full border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2.5 sm:py-3 px-3 text-sm sm:text-base">
                           {opt.values.map(val => <option key={val}>{val}</option>)}
                         </select>
                       )}
@@ -509,7 +509,7 @@ export default function PrintingServiceDetail() {
                 {/* Total Price */}
                 <div className="text-center mb-6">
                   <p className="text-sm text-gray-500">Примерная стоимость</p>
-                  <p className="text-4xl font-bold text-gray-900">
+                  <p className="text-3xl sm:text-4xl font-bold text-gray-900 break-words">
                     <span className={`bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>{totalPrice}₽</span>
                   </p>
                 </div>
