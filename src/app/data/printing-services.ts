@@ -1,4 +1,4 @@
-import { Printer, ScanLine, BookOpen, CreditCard, FileText, Package, Shirt, GalleryHorizontal, CupSoda, Calendar, Sticker, Image as ImageIcon, Map, Mail, Notebook, ShoppingBag, IdCard, Stamp, Flag, Folder, Tag, Presentation, KeyRound, Magnet, BadgeCheck, PenTool, HardDrive, Puzzle } from 'lucide-react';
+import { Printer, ScanLine, BookOpen, CreditCard, FileText, Package, Shirt, GalleryHorizontal, CupSoda, Calendar, Sticker, Image as ImageIcon, Map, Mail, Notebook, ShoppingBag, IdCard, Stamp, Flag, Folder, Tag, Presentation, KeyRound, Magnet, BadgeCheck, PenTool, HardDrive, Puzzle, PanelTop, Square, Maximize, Layers, Camera, Heart } from 'lucide-react';
 import scanningImg from '@/assets/printing/scanning.jpg';
 import canvasImg from '@/assets/printing/canvas.jpg';
 import mugImg from '@/assets/printing/mug.jpg';
