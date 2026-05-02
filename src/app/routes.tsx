@@ -1,4 +1,5 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./page-templates/home";
 import ServicesPage from "./page-templates/services-page";
 import ServiceDetailPage from "./page-templates/service-detail";
@@ -21,11 +22,23 @@ import PrintingOrderConfirmation from "./page-templates/printing-order-confirmat
 import InteractiveMapPage from "./page-templates/interactive-map";
 import MinskMapPage from "./page-templates/minsk-map";
 
+function RootLayout() {
+  return (
+    <>
+      <ScrollToTop />
+      <Outlet />
+    </>
+  );
+}
+
 export const router = createBrowserRouter([
   {
-    path: "/",
-    Component: Home,
-  },
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        Component: Home,
+      },
   {
     path: "/services",
     Component: ServicesPage,
@@ -105,5 +118,7 @@ export const router = createBrowserRouter([
   {
     path: "/minsk-map",
     Component: MinskMapPage,
+  },
+    ],
   },
 ]);
