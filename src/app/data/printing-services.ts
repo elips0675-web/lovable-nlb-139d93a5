@@ -1,4 +1,4 @@
-import { Printer, ScanLine, BookOpen, CreditCard, FileText, Package, Shirt, GalleryHorizontal, CupSoda, Calendar, Sticker, Image as ImageIcon, Map, Mail, Notebook, ShoppingBag, IdCard, Stamp, Flag, Folder, Tag, Presentation, KeyRound, Magnet, BadgeCheck, PenTool, HardDrive, Puzzle } from 'lucide-react';
+import { Printer, ScanLine, BookOpen, CreditCard, FileText, Package, Shirt, GalleryHorizontal, CupSoda, Calendar, Sticker, Image as ImageIcon, Map, Mail, Notebook, ShoppingBag, IdCard, Stamp, Flag, Folder, Tag, Presentation, KeyRound, Magnet, BadgeCheck, PenTool, HardDrive, Puzzle, PanelTop, Square, Maximize, Layers, Camera, Heart } from 'lucide-react';
 import scanningImg from '@/assets/printing/scanning.jpg';
 import canvasImg from '@/assets/printing/canvas.jpg';
 import mugImg from '@/assets/printing/mug.jpg';
@@ -435,5 +435,107 @@ catalogServices.push(
       { name: 'Срочно (1 день)', price: '+300₽' },
     ],
     color: 'from-violet-600 to-purple-700',
+  },
+);
+
+// === Дополнительные услуги фотопечати (по образцу karandash.by) ===
+catalogServices.push(
+  {
+    id: 'panoramic-photo',
+    icon: PanelTop,
+    title: 'Печать панорамных фото',
+    description: 'Широкие панорамные снимки на фотобумаге премиум-качества.',
+    image: unsplash('1500530855697-b586d89ba3ee'),
+    prices: [
+      { name: '10×30 см', price: '90₽' },
+      { name: '20×60 см', price: '250₽' },
+      { name: '30×90 см', price: '500₽' },
+      { name: '30×120 см', price: '750₽' },
+    ],
+    color: 'from-sky-500 to-indigo-500',
+  },
+  {
+    id: 'square-photo',
+    icon: Square,
+    title: 'Печать квадратных фото',
+    description: 'Фото в стиле Instagram: 10×10, 15×15, 20×20 см.',
+    image: unsplash('1502082553048-f009c37129b9'),
+    prices: [
+      { name: '6,5×6,5 см', price: '12₽' },
+      { name: '10×10 см', price: '25₽' },
+      { name: '15×15 см', price: '60₽' },
+      { name: '20×20 см', price: '110₽' },
+    ],
+    color: 'from-pink-500 to-fuchsia-500',
+  },
+  {
+    id: 'large-format-photo',
+    icon: Maximize,
+    title: 'Фото большого формата',
+    description: 'Печать фотографий А3, А2, А1 — для интерьера и выставок.',
+    image: unsplash('1469474968028-56623f02e42e'),
+    prices: [
+      { name: 'А3 (30×42 см)', price: '350₽' },
+      { name: 'А2 (42×60 см)', price: '650₽' },
+      { name: 'А1 (60×84 см)', price: '1200₽' },
+      { name: 'Премиум-бумага', price: '+30%' },
+    ],
+    color: 'from-emerald-500 to-teal-600',
+  },
+  {
+    id: 'photobook',
+    icon: BookOpen,
+    title: 'Фотокниги',
+    description: 'Качественные фотокниги в твёрдом и мягком переплёте.',
+    image: unsplash('1519682337058-a94d519337bc'),
+    prices: [
+      { name: '20×20, 20 стр.', price: '1500₽' },
+      { name: '20×30, 30 стр.', price: '2400₽' },
+      { name: '30×30, 40 стр.', price: '3500₽' },
+      { name: 'Премиум-обложка', price: '+500₽' },
+    ],
+    color: 'from-amber-500 to-orange-600',
+  },
+  {
+    id: 'photo-collage',
+    icon: Layers,
+    title: 'Фотоколлажи',
+    description: 'Создание и печать коллажей из ваших фотографий.',
+    image: unsplash('1488376986648-2512dfc6f736'),
+    prices: [
+      { name: 'А4 коллаж', price: '300₽' },
+      { name: 'А3 коллаж', price: '550₽' },
+      { name: 'Дизайн-макет', price: 'от 500₽' },
+      { name: 'Срочная печать', price: '+200₽' },
+    ],
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    id: 'photo-on-acrylic',
+    icon: Camera,
+    title: 'Фото на акриле',
+    description: 'Эффектная печать фотографий на прозрачном акриле.',
+    image: unsplash('1551269901-5c5e14c25df7'),
+    prices: [
+      { name: '20×30 см', price: '1100₽' },
+      { name: '30×40 см', price: '1700₽' },
+      { name: '40×60 см', price: '2800₽' },
+      { name: 'Подсветка LED', price: '+800₽' },
+    ],
+    color: 'from-cyan-500 to-blue-600',
+  },
+  {
+    id: 'photo-magnets',
+    icon: Heart,
+    title: 'Фото-магниты',
+    description: 'Магниты с вашими фотографиями — отличный сувенир.',
+    image: unsplash('1517242810446-cc8951b2be40'),
+    prices: [
+      { name: '7×10 см (1 шт.)', price: '180₽' },
+      { name: '10×15 см (1 шт.)', price: '250₽' },
+      { name: 'Набор 6 шт.', price: '900₽' },
+      { name: 'Виниловый магнит', price: '+50₽' },
+    ],
+    color: 'from-rose-500 to-red-600',
   },
 );
