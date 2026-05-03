@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Header } from '../components/header';
 import { Footer } from '../components/footer';
-import { CheckCircle, Printer } from 'lucide-react';
+import { CircleCheck as CheckCircle, Printer } from 'lucide-react';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -67,7 +67,7 @@ export default function PrintingOrderConfirmation() {
             <div className="text-center mt-10">
               <Link
                 to="/printing-services"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-xl transition-all font-semibold text-lg"
+                className="px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full hover:shadow-xl transition-all font-semibold text-lg"
               >
                 Вернуться в каталог
               </Link>

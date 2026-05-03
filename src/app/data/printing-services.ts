@@ -44,7 +44,7 @@ export const catalogServices = [
         { name: 'Термоклей (до 300 л.)', price: '150₽' },
         { name: 'Ламинирование А4', price: '50₽' },
       ],
-      color: 'from-indigo-500 to-purple-500',
+      color: 'from-blue-600 to-blue-800',
   },
   {
       id: 'business-cards',
@@ -58,7 +58,7 @@ export const catalogServices = [
         { name: 'Дизайнерская бумага', price: '+200₽' },
         { name: 'Срочная печать (1 час)', price: '+300₽' },
       ],
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-blue-500 to-sky-500',
   },
   {
       id: 'brochures',
@@ -128,7 +128,7 @@ export const catalogServices = [
         { name: 'Свитшот (A4 принт)', price: '1500₽' },
         { name: 'Принт на спине', price: '+300₽' },
       ],
-      color: 'from-sky-500 to-fuchsia-500',
+      color: 'from-sky-500 to-blue-500',
   }
 ];
 
@@ -248,7 +248,7 @@ catalogServices.push(
       { name: 'С клипсой', price: '+30₽/шт' },
       { name: 'На шнурке', price: '+50₽/шт' },
     ],
-    color: 'from-violet-500 to-indigo-500',
+    color: 'from-blue-500 to-blue-700',
   },
   {
     id: 'stamps',
@@ -320,7 +320,7 @@ catalogServices.push(
       { name: 'Ламинация', price: '+300₽' },
       { name: 'Тиснение фольгой', price: '+500₽' },
     ],
-    color: 'from-indigo-600 to-blue-700',
+    color: 'from-blue-600 to-blue-800',
   },
   {
     id: 'price-tags',
@@ -348,7 +348,7 @@ catalogServices.push(
       { name: 'На пружине', price: '+100₽' },
       { name: 'Твёрдая обложка', price: '+400₽' },
     ],
-    color: 'from-purple-600 to-fuchsia-600',
+    color: 'from-blue-600 to-blue-800',
   },
 
   // --- Сувенирная продукция ---
@@ -378,7 +378,7 @@ catalogServices.push(
       { name: 'Открытка-магнит', price: '300₽' },
       { name: 'Партия 50 шт.', price: '−20%' },
     ],
-    color: 'from-fuchsia-500 to-pink-600',
+    color: 'from-sky-500 to-blue-500',
   },
   {
     id: 'pins',
@@ -406,7 +406,7 @@ catalogServices.push(
       { name: 'Гравировка', price: '+30₽/шт' },
       { name: 'Подарочная коробка', price: '+150₽' },
     ],
-    color: 'from-blue-500 to-indigo-600',
+    color: 'from-blue-500 to-blue-700',
   },
   {
     id: 'usb-drives',
@@ -434,7 +434,7 @@ catalogServices.push(
       { name: 'Подарочная коробка', price: '+200₽' },
       { name: 'Срочно (1 день)', price: '+300₽' },
     ],
-    color: 'from-violet-600 to-purple-700',
+    color: 'from-blue-600 to-blue-800',
   },
 );
 
@@ -452,7 +452,7 @@ catalogServices.push(
       { name: '30×90 см', price: '500₽' },
       { name: '30×120 см', price: '750₽' },
     ],
-    color: 'from-sky-500 to-indigo-500',
+    color: 'from-sky-500 to-blue-600',
   },
   {
     id: 'square-photo',
@@ -466,7 +466,7 @@ catalogServices.push(
       { name: '15×15 см', price: '60₽' },
       { name: '20×20 см', price: '110₽' },
     ],
-    color: 'from-pink-500 to-fuchsia-500',
+    color: 'from-blue-500 to-sky-500',
   },
   {
     id: 'large-format-photo',
@@ -508,7 +508,7 @@ catalogServices.push(
       { name: 'Дизайн-макет', price: 'от 500₽' },
       { name: 'Срочная печать', price: '+200₽' },
     ],
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-blue-500 to-sky-500',
   },
   {
     id: 'photo-on-acrylic',
