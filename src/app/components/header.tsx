@@ -2,10 +2,23 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Menu, X, Search, User, BookOpen, Bell } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { GlobalSearch } from './GlobalSearch';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasUnread, setHasUnread] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   useEffect(() => {
     const checkNotifications = () => {
@@ -86,6 +99,8 @@ export function Header() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
+              onClick={() => setIsSearchOpen(true)}
+              aria-label="Поиск по сайту"
               className="p-2 hover:bg-gray-100 rounded-full transition-colors relative"
             >
               <Search className="w-5 h-5 text-gray-700" />
@@ -165,7 +180,11 @@ export function Header() {
               ))}
             </nav>
             <div className="py-4 border-t border-gray-200 flex items-center gap-4">
-                <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                <button
+                  onClick={() => { setIsMenuOpen(false); setIsSearchOpen(true); }}
+                  aria-label="Поиск по сайту"
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
                     <Search className="w-5 h-5 text-gray-700" />
                 </button>
                 <Link to="/notifications" className="p-2 hover:bg-gray-100 rounded-full transition-colors relative">
@@ -186,6 +205,7 @@ export function Header() {
           </motion.div>
         )}
       </div>
+      <GlobalSearch open={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   );
 }
