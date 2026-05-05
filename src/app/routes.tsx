@@ -21,6 +21,14 @@ import ConcertHallDetailPage from "./page-templates/concert-hall-detail";
 import PrintingOrderConfirmation from "./page-templates/printing-order-confirmation";
 import InteractiveMapPage from "./page-templates/interactive-map";
 import MinskMapPage from "./page-templates/minsk-map";
+import AdminLayout from "./admin/components/AdminLayout";
+import AdminDashboard from "./admin/pages/Dashboard";
+import AdminBooks from "./admin/pages/Books";
+import AdminEvents from "./admin/pages/Events";
+import AdminNews from "./admin/pages/News";
+import AdminServices from "./admin/pages/Services";
+import AdminUsers from "./admin/pages/Users";
+import AdminSettings from "./admin/pages/Settings";
 
 function RootLayout() {
   return (
@@ -118,6 +126,19 @@ export const router = createBrowserRouter([
   {
     path: "/minsk-map",
     Component: MinskMapPage,
+  },
+  {
+    path: "/admin",
+    Component: AdminLayout,
+    children: [
+      { index: true, Component: AdminDashboard },
+      { path: "books", Component: AdminBooks },
+      { path: "events", Component: AdminEvents },
+      { path: "news", Component: AdminNews },
+      { path: "services", Component: AdminServices },
+      { path: "users", Component: AdminUsers },
+      { path: "settings", Component: AdminSettings },
+    ],
   },
     ],
   },
