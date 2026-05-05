@@ -35,7 +35,12 @@ function createStore<T>(key: string, initial: T) {
 
 export function useStore<T>(store: ReturnType<typeof createStore<T>>) {
   const [, setTick] = useState(0);
-  useEffect(() => store.subscribe(() => setTick((t) => t + 1)), [store]);
+  useEffect(() => {
+    const unsub = store.subscribe(() => setTick((t) => t + 1));
+    return () => {
+      unsub();
+    };
+  }, [store]);
   return [store.get(), store.set] as const;
 }
 
@@ -260,4 +265,3 @@ export const authStore = createStore<{ isAdmin: boolean; theme: 'light' | 'dark'
 );
 
 export { uid };
-export type AnyStore = ReturnType<typeof createStore>;
