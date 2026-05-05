@@ -5,6 +5,42 @@ PWA-портал Национальной библиотеки Беларуси.
 - 🌐 Превью: https://id-preview--3a5ebff2-151c-4b40-b357-e19a8ffa7c05.lovable.app
 - 🚀 Опубликовано: https://orbit-unchained.lovable.app
 
+## Админ-панель
+
+Админка доступна по маршруту [`/admin`](./src/app/admin) и реализована как отдельный модуль:
+
+- `GET /admin` — обзорный дашборд (статистика, график посещаемости, быстрые действия)
+- `GET /admin/books` — CRUD каталога книг
+- `GET /admin/events` — CRUD событий
+- `GET /admin/news` — CRUD новостей
+- `GET /admin/services` — CRUD услуг библиотеки
+- `GET /admin/users` — управление пользователями и ролями
+- `GET /admin/settings` — контакты, соцсети, SEO, PWA
+
+Стек админки: shadcn/ui + Tailwind, react-hook-form + Zod, @tanstack/react-table, recharts, Framer Motion, Sonner. Авторизация — заглушка через `authStore` (localStorage). Данные хранятся в локальном `createStore` с автосинхронизацией через `localStorage`.
+
+## Деплой на Vercel
+
+1. Залогиньтесь на [vercel.com](https://vercel.com) и нажмите **Add New → Project**.
+2. Подключите GitHub-репозиторий с этим проектом.
+3. Vercel автоматически определит настройки из `vercel.json`:
+   - Framework: **Vite**
+   - Build: `npm run build`
+   - Output: `dist`
+   - SPA-rewrite на `index.html` уже настроен.
+4. Скопируйте `.env.example` → переменные окружения проекта на Vercel (Project → Settings → Environment Variables).
+5. Нажмите **Deploy**.
+
+### Автодеплой через GitHub Actions
+
+В `.github/workflows/deploy.yml` настроен пайплайн:
+- На каждый PR/push: `lint`, `test`, `build`.
+- На push в `main`: автоматический деплой на Vercel.
+
+Добавьте в **Settings → Secrets and variables → Actions**:
+- `VERCEL_TOKEN` — персональный токен из [vercel.com/account/tokens](https://vercel.com/account/tokens).
+- (Опционально) `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` через `vercel link`.
+
 ## Документация
 
 Подробная документация в папке [`docs/`](./docs):
