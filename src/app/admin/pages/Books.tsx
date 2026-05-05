@@ -57,11 +57,12 @@ export default function AdminBooks() {
   };
 
   const submit = (data: FormData) => {
+    const clean = data as AdminBook;
     if (editing) {
-      setBooks((list) => list.map((x) => (x.id === editing.id ? { ...editing, ...data } : x)));
+      setBooks((list) => list.map((x) => (x.id === editing.id ? { ...editing, ...clean } : x)));
       toast.success('Книга обновлена');
     } else {
-      setBooks((list) => [...list, { ...data, id: uid() }]);
+      setBooks((list) => [...list, { ...clean, id: uid() }]);
       toast.success('Книга добавлена');
     }
     setOpen(false);
