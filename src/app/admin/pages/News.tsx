@@ -14,7 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { DataTable } from '../components/DataTable';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { ImageDropZone } from '../components/ImageDropZone';
-import { AdminNews, newsStore, uid, useStore } from '../lib/store';
+import { type AdminNews, newsStore, uid, useStore } from '../lib/store';
 
 const schema = z.object({
   title: z.string().min(1),
